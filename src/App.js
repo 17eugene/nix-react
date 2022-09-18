@@ -1,7 +1,6 @@
 import { data } from "./initialData.js";
-import { v4 } from "uuid";
 
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo, useId } from "react";
 
 import { Container, Typography, Box } from "@mui/material";
 import { styled } from "@mui/material";
@@ -43,6 +42,8 @@ function App() {
   const [editingTask, setEditingTask] = useState("");
   const [filterValue, setFilterValue] = useState("");
   const [selectedSort, setSelectedSort] = useState("");
+
+  const id = useId();
 
   const sortedTodos = useMemo(() => {
     if (selectedSort) {
@@ -101,7 +102,7 @@ function App() {
     }
 
     const todo = {
-      id: v4(),
+      id,
       status: statusOption,
       completed: false,
       task: inputValue.trim(),
