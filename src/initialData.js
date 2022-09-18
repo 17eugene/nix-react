@@ -1,0 +1,42 @@
+export const data = [
+  {
+    id: 1,
+    task: "Buy soda",
+    status: "Done",
+    completed: true,
+    createdAt: 1663531353971,
+    updatedAt: null,
+  },
+  {
+    id: 2,
+    task: "Add photo",
+    status: "Done",
+    completed: true,
+    createdAt: 1663531353973,
+    updatedAt: null,
+  },
+  {
+    id: 3,
+    task: "Bust a nut",
+    status: "Progress",
+    completed: false,
+    createdAt: 1663531353975,
+    updatedAt: null,
+  },
+  {
+    id: 4,
+    task: "Check the car",
+    status: "Progress",
+    completed: false,
+    createdAt: 1663531353979,
+    updatedAt: null,
+  },
+  {
+    id: 5,
+    task: "Finish",
+    status: "Opened",
+    completed: false,
+    createdAt: 1663531353980,
+    updatedAt: null,
+  },
+];
