@@ -137,8 +137,8 @@ function App() {
       return;
     }
 
-    if (editingTask.trim().length > 250) {
-      setInputError("No longer than 250 chars");
+    if (editingTask.trim().length > 50) {
+      setInputError("No longer than 50 chars");
       return;
     }
 
