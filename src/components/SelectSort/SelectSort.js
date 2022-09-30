@@ -1,23 +1,32 @@
+import React from "react";
 import s from "./SelectSort.module.css";
+import PropTypes from "prop-types";
 
-const SelectSort = ({ options, defaultValue, value, onChange }) => {
+const SelectSort = ({ defaultValue, value, onChange, options }) => {
   return (
-    <select
-      className={s.sortSelect}
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-    >
-      <option disabled value="">
+    <select className={s.select} value={value} onChange={onChange}>
+      <option disabled className={s.defaultOption} value="">
         {defaultValue}
       </option>
-      {options.length > 0 &&
-        options.map((option) => (
-          <option className={s.sortOption} key={option.name} value={option.value}>
-            {option.name}
-          </option>
-        ))}
+      {options.map((option) => (
+        <option className={s.option} key={option.name} value={option.value}>
+          {option.name}
+        </option>
+      ))}
     </select>
   );
 };
 
 export default SelectSort;
+
+SelectSort.propTypes = {
+  defaultValue: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ),
+};

@@ -1,30 +1,26 @@
-import { Box, TextField } from "@mui/material";
+import { Input } from "@mui/material";
 import { styled } from "@mui/material";
+import PropTypes from "prop-types";
 
-const StyledBox = styled(Box)(() => ({
-  width: "35%",
-  marginLeft: "auto",
-  marginBottom: "15px",
+const StyledInput = styled(Input)(() => ({
+  height: "35px",
+  width: "200px",
+  padding: "0 5px 0 5px",
+  marginLeft: "40px",
 }));
 
-const StyledTextField = styled(TextField)(() => ({
-  fontSize: "14px",
-  color: "#C3C8C8",
-}));
-
-const Filter = ({ onChange, value }) => {
+const Filter = ({ placeholder, value, onChange }) => {
   return (
-    <StyledBox>
-      <StyledTextField
-        variant="outlined"
-        placeholder="Search by status..."
-        size="small"
-        fullWidth
-        value={value}
-        onChange={onChange}
-      />
-    </StyledBox>
+    <StyledInput placeholder={placeholder} value={value} onChange={onChange}>
+      Filter
+    </StyledInput>
   );
 };
 
 export default Filter;
+
+Filter.propTypes = {
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};

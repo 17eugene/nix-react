@@ -1,11 +1,17 @@
-.sortSelect {
-  border: none;
-  outline: none;
-  font-size: 14px;
-  color: #7c7c7c;
-  width: 70px;
+.select {
+    height: 35px;
+    width: 180px;
+    outline: none;
+    border: 2px solid #a09e9e;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
-.sortOption {
-  color: #363535;
+.defaultOption {
+    font-weight: 700;
+}
+
+.option {
+    color: #493f46;
+    font-style: italic;
 }
